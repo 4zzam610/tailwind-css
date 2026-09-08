@@ -1,0 +1,40 @@
+@import "tailwindcss";
+/* app.css */
+@import "tailwindcss";
+
+@theme {
+  --animate-aurora: aurora 8s ease-in-out infinite alternate;
+  --animate-float-slow: floatSlow 6s ease-in-out infinite;
+
+  @keyframes aurora {
+    0% {
+      transform: rotate(0deg) scale(1) translateY(0);
+      filter: blur(40px);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.3) translateY(-20px);
+      filter: blur(60px);
+    }
+    100% {
+      transform: rotate(360deg) scale(1) translateY(0);
+      filter: blur(40px);
+    }
+  }
+
+  @keyframes floatSlow {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(3deg);
+    }
+  }
+}
+
+@utility perspective-1000 {
+  perspective: 1000px;
+}
+.btn {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-700;
+}
